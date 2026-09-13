@@ -1,0 +1,283 @@
+.section {
+  position: relative;
+  /* Reduced padding since margin-bottom of last card provides the space */
+  padding-bottom: 0;
+  background-color: var(--bg-primary);
+}
+
+.stackingContainer {
+  position: relative;
+  display: flow-root; /* Prevent margin collapse without adding padding */
+}
+
+.folderCard {
+  position: sticky;
+  top: 120px;
+  width: 100%;
+  margin-bottom: 50vh;
+  /* Space between triggers */
+  filter: drop-shadow(0 -10px 20px rgba(0, 0, 0, 0.1));
+}
+
+.folderInner {
+  background-color: #106031;
+  color: #ffffff;
+  /* Folder tab shape: Dynamic based on index */
+  clip-path: polygon(
+    0 60px, 
+    var(--clip-start-base) 60px, 
+    var(--clip-slope-top-left) 0, 
+    var(--clip-top-flat-right) 0, 
+    var(--clip-slope-bottom-right) 60px, 
+    100% 60px, 
+    100% 100%, 
+    0 100%
+  );
+  padding: 80px 40px 40px 40px;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tab Text embedded in the cutout area */
+.topTab {
+  position: absolute;
+  top: 20px;
+  /* left is set inline dynamically */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.splitLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  flex-grow: 1;
+  margin-top: 20px;
+}
+
+/* Left Side Typography */
+.leftContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 2rem;
+  opacity: 0.8;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+.title {
+  font-family: 'Aeonik', -apple-system, sans-serif;
+  font-size: clamp(4rem, 8vw, 8rem);
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.desc {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  line-height: 1.4;
+  opacity: 0.9;
+  max-width: 400px;
+  margin-bottom: 3rem;
+}
+
+.exploreLink {
+  font-family: monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 5px;
+  width: fit-content;
+  margin-bottom: auto;
+  /* Push bottom tabs down */
+  transition: border-color 0.3s ease;
+}
+
+.exploreLink:hover {
+  border-color: #ffffff;
+}
+
+.bottomTabs {
+  display: flex;
+  gap: 10px;
+  margin-top: 4rem;
+}
+
+.bottomTab {
+  background-color: #ffffff;
+  color: #106031;
+  padding: 10px 20px;
+  font-family: monospace;
+  font-size: 0.85rem;
+  font-weight: bold;
+  clip-path: polygon(10px 0, 100% 0, 100% 100%, 0 100%, 0 10px);
+}
+
+/* Right Side Image */
+.rightContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageFrame {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 4 / 5;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 10px;
+}
+
+.featureImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imageTagTop {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  padding: 8px 12px;
+  font-family: monospace;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.imageTagRight {
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  /* Pull it slightly outside the frame */
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  font-family: monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  gap: 4px;
+}
+
+/* Crosshairs */
+.crosshair {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #ffffff;
+}
+
+.tl {
+  top: -5px;
+  left: -5px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.tr {
+  top: -5px;
+  right: -5px;
+  border-left: none;
+  border-bottom: none;
+}
+
+.bl {
+  bottom: -5px;
+  left: -5px;
+  border-right: none;
+  border-top: none;
+}
+
+.br {
+  bottom: -5px;
+  right: -5px;
+  border-left: none;
+  border-top: none;
+}
+
+/* Mobile Adaptations */
+@media (max-width: 900px) {
+  .folderInner {
+    padding: 60px 20px 20px 20px;
+    clip-path: polygon(0 0, 140px 0, 180px 40px, 100% 40px, 100% 100%, 0 100%);
+  }
+
+  .splitLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .imageFrame {
+    min-height: 300px;
+  }
+}
+
+/* Alternate Card Styles */
+.folderAlt {
+  background-color: #ffffff;
+  color: #106031;
+}
+
+.folderCardAlt {
+  /* Create a solid 2px outline tracing the clip-path mask */
+  filter: drop-shadow(2px 0 0 #106031) drop-shadow(-2px 0 0 #106031) drop-shadow(0 2px 0 #106031) drop-shadow(0 -2px 0 #106031) drop-shadow(0 -10px 20px rgba(0, 0, 0, 0.1));
+}
+
+.folderAlt .dot {
+  background-color: #106031;
+}
+
+.folderAlt .exploreLink {
+  color: #106031;
+  border-bottom-color: rgba(16, 96, 49, 0.3);
+}
+
+.folderAlt .exploreLink:hover {
+  border-bottom-color: #106031;
+}
+
+.folderAlt .bottomTab {
+  background-color: #106031;
+  color: #ffffff;
+}
+
+.folderAlt .imageFrame {
+  border-color: rgba(16, 96, 49, 0.2);
+}
+
+.folderAlt .imageTagTop {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-color: rgba(16, 96, 49, 0.2);
+}
+
+.folderAlt .crosshair {
+  border-color: #106031;
+}

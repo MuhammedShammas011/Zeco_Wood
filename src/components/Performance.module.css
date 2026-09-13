@@ -1,0 +1,230 @@
+/* Performance.module.css */
+
+.section {
+  padding-block: clamp(4rem, 8vw, 6rem);
+  background-color: #fcfcfc;
+  /* Very light background for the section to let the cards pop */
+}
+
+.bentoGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: end;
+}
+
+/* ── Left Column ── */
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.headingBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #106031;
+  text-transform: uppercase;
+}
+
+.heading {
+  font-family: 'Aeonik', -apple-system, sans-serif;
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  color: #106031;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #666;
+  max-width: 600px;
+}
+
+/* ── Specifications List ── */
+.specsContainer {
+  background-color: #f0f4ef;
+  /* Light greenish-gray to match reference */
+  border: 1px solid rgba(16, 96, 49, 0.1);
+  border-radius: 16px;
+  padding: 16px 32px;
+}
+
+.specRow {
+  display: grid;
+  grid-template-columns: 48px 140px 1fr;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(16, 96, 49, 0.1);
+}
+
+.specRow:last-child {
+  border-bottom: none;
+}
+
+.iconWrapper {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: rgba(16, 96, 49, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #106031;
+}
+
+.iconSvg {
+  width: 16px;
+  height: 16px;
+}
+
+.specLabel {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #106031;
+}
+
+.specValue {
+  font-size: 0.95rem;
+  color: #777;
+}
+
+/* ── Right Column ── */
+.rightCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.imageWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 32px;
+}
+
+.mainImage {
+  width: 150%;
+  max-width: 1000px;
+  object-fit: contain;
+  object-position: right;
+  transform: translateX(25%);
+  /* Shadow applied directly to the PNG edges */
+  filter: drop-shadow(-15px 25px 20px rgba(0, 0, 0, 0.15));
+}
+
+/* ── Bottom Card ── */
+.bottomCard {
+  background-color: #f0f4ef;
+  border-radius: 16px;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 480px;
+  width: 100%;
+}
+
+.bottomCardIconWrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(16, 96, 49, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #106031;
+  flex-shrink: 0;
+}
+
+.bottomCardIconWrapper .iconSvg {
+  width: 24px;
+  height: 24px;
+}
+
+.bottomCardText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bottomCardTitle {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #106031;
+}
+
+.bottomCardDesc {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #666;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .specRow {
+    grid-template-columns: 48px 1fr;
+    gap: 8px;
+  }
+
+  .specValue {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 900px) {
+  .bentoGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .rightCol {
+    align-items: center;
+  }
+
+  .imageWrapper {
+    justify-content: center;
+  }
+
+  .mainImage {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 600px) {
+  .specsContainer {
+    padding: 16px;
+  }
+
+  .bottomCard {
+    padding: 20px;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ── Scroll Animations ── */
+.animateOnScroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animateIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay1 { transition-delay: 0.1s; }
+.delay2 { transition-delay: 0.2s; }
+.delay3 { transition-delay: 0.3s; }

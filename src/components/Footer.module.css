@@ -1,0 +1,221 @@
+/* Footer.module.css */
+
+.footer {
+  background-color: #fdfdfd;
+  padding-top: clamp(6rem, 12vw, 10rem);
+  padding-bottom: 2rem;
+  color: #106031;
+  overflow: hidden;
+  border-top: 1px solid rgba(16, 96, 49, 0.2);
+}
+
+/* ── Top CTA Block ── */
+.ctaBlock {
+  text-align: center;
+  margin-bottom: clamp(4rem, 10vw, 8rem);
+}
+
+.headingWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.massiveHeading {
+  font-family: 'Aeonik', -apple-system, sans-serif;
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 900;
+  line-height: 0.9;
+  text-transform: uppercase;
+  color: #0b4522;
+  /* Very dark green */
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.pillButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-6deg);
+  background-color: #106031;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  padding: clamp(0.5rem, 1.5vw, 0.8rem) clamp(1rem, 2.5vw, 1.8rem);
+  border-radius: 9999px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 10;
+  white-space: nowrap;
+}
+
+.pillButton:hover {
+  transform: translate(-50%, -50%) rotate(0deg) scale(1.05);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.subtext {
+  margin-top: clamp(1.5rem, 4vw, 3rem);
+  margin-left: auto;
+  margin-right: auto;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-weight: 500;
+  color: #106031;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* ── Bottom Grid Rows ── */
+.footerGrid {
+  display: flex;
+  flex-direction: column;
+}
+
+.gridRow {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(16, 96, 49, 0.4);
+  align-items: baseline;
+  font-size: 0.95rem;
+}
+
+.rowLabel {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.rowItem {
+  color: #106031;
+  font-weight: 500;
+}
+
+.link {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.link:hover {
+  opacity: 0.7;
+}
+
+/* ── Branding Row ── */
+.brandRow {
+  border-top: 2px solid #106031;
+  padding: 2.5rem 0 1rem;
+  align-items: center;
+}
+
+.brandLeft {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.logo {
+  height: clamp(20px, 3vw, 28px);
+  width: auto;
+  object-fit: contain;
+  object-position: left;
+  /* slight negative margin to optical alignment with text */
+  margin-left: -2px;
+}
+
+.tagline {
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.brandRight {
+  grid-column: 3 / 5;
+  text-align: right;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  line-height: 1.6;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .gridRow {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .rowLabel {
+    grid-column: 1 / -1;
+    margin-bottom: 0.5rem;
+  }
+
+  .brandRow {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .brandLeft {
+    grid-column: 1;
+  }
+
+  .brandRight {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .massiveHeading {
+    /* Slightly less tight line height on mobile to prevent clipping */
+    line-height: 1;
+  }
+
+  .gridRow {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 1.5rem 0;
+  }
+
+  .rowLabel {
+    margin-bottom: 0.25rem;
+  }
+
+  .brandRow {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .brandLeft {
+    align-items: center;
+  }
+
+  .logo {
+    object-position: center;
+    margin-left: 0;
+  }
+
+  .brandRight {
+    text-align: center;
+  }
+}
+
+/* ── Scroll Animations ── */
+.animateOnScroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animateIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay1 { transition-delay: 0.1s; }

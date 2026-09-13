@@ -1,0 +1,43 @@
+/* ProductSection.module.css */
+
+.section {
+  border-top: 1px solid var(--border);
+}
+
+.heading {
+  margin-bottom: var(--space-md);
+}
+
+.frame {
+  aspect-ratio: 16 / 7;
+  position: relative;
+  margin-bottom: var(--space-md);
+  overflow: hidden;
+}
+
+.frameInner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.frameLabel {
+  font-size: var(--text-eyebrow);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.25;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .frame {
+    aspect-ratio: 4 / 3;
+  }
+}

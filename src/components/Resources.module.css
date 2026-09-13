@@ -1,0 +1,63 @@
+/* Resources.module.css */
+
+.section {
+  border-top: 1px solid var(--border);
+}
+
+.list {
+  margin-top: var(--space-md);
+  border-top: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: var(--space-xl);
+}
+
+.item {
+  border-bottom: 1px solid var(--border);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(1rem, 2vw, 1.5rem) 0;
+  min-height: clamp(56px, 6vw, 72px);
+  color: var(--text-primary);
+  transition: opacity var(--t-fast);
+}
+
+@media (hover: hover) {
+  .link:hover {
+    opacity: 0.65;
+  }
+  .link:hover .arrow {
+    transform: translateX(4px);
+  }
+}
+
+.label {
+  font-size: var(--text-body-lg);
+}
+
+.arrow {
+  font-size: var(--text-body);
+  opacity: 0.4;
+  transition: transform var(--t-med);
+  flex-shrink: 0;
+}
+
+/* Mobile — single column full-width touch rows */
+@media (max-width: 767px) {
+  .list {
+    grid-template-columns: 1fr;
+  }
+  .link {
+    min-height: 64px;
+  }
+  .label {
+    font-size: var(--text-body-lg);
+  }
+  .arrow {
+    opacity: 0.6;
+  }
+}

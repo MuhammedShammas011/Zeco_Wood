@@ -1,0 +1,53 @@
+/* InUse.module.css */
+
+.section {
+  border-top: 1px solid var(--border);
+}
+
+.heading {
+  margin-bottom: var(--space-md);
+}
+
+.frame {
+  aspect-ratio: 21 / 9;
+  position: relative;
+  margin-bottom: var(--space-md);
+  overflow: hidden;
+}
+
+/* Architectural crosshair — intentional, material-inspired placeholder detail */
+.marker {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.markerH {
+  position: absolute;
+  width: 48px;
+  height: 1px;
+  background-color: var(--text-primary);
+  opacity: 0.2;
+}
+
+.markerV {
+  position: absolute;
+  width: 1px;
+  height: 48px;
+  background-color: var(--text-primary);
+  opacity: 0.2;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .frame {
+    aspect-ratio: 4 / 3;
+  }
+}

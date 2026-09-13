@@ -1,0 +1,73 @@
+/* ==========================================================================
+   ZECOWOOD — CSS VARIABLES & DESIGN TOKENS
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Aeonik';
+  src: url('/fonts/Aeonik/Aeonik-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Aeonik';
+  src: url('/fonts/Aeonik/Aeonik-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Aeonik';
+  src: url('/fonts/Aeonik/Aeonik-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Aeonik';
+  src: url('/fonts/Aeonik/Aeonik-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+:root {
+  /* === BRAND COLORS === */
+  --bg-primary:    #F5F6F6;
+  --bg-dark:       #106031;
+  --text-primary:  #106031;
+  --text-light:    #F5F6F6;
+  --border:        rgba(16, 96, 49, 0.18);
+  --border-strong: rgba(16, 96, 49, 1);
+
+  /* === FONT === */
+  --font: 'Aeonik', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+
+  /* === FLUID TYPOGRAPHY === */
+  --text-eyebrow:  clamp(0.688rem, 0.65rem + 0.19vw, 0.8rem);
+  --text-nav:      clamp(0.813rem, 0.78rem + 0.17vw, 0.875rem);
+  --text-body:     clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --text-body-lg:  clamp(1.125rem, 1rem + 0.63vw, 1.5rem);
+  --text-link:     clamp(0.875rem, 0.84rem + 0.18vw, 1rem);
+  --text-md:       clamp(1.5rem, 1.3rem + 1vw, 2.25rem);
+  --text-lg:       clamp(2rem, 1.7rem + 1.5vw, 3.5rem);
+  --text-xl:       clamp(2.5rem, 2rem + 2.5vw, 5rem);
+  --text-hero:     clamp(3.25rem, 9vw, 9rem);
+
+  /* === FLUID SPACING === */
+  --space-3xs: clamp(0.25rem, 0.2rem + 0.25vw, 0.5rem);
+  --space-2xs: clamp(0.5rem,  0.4rem + 0.5vw,  0.75rem);
+  --space-xs:  clamp(0.75rem, 0.6rem + 0.75vw, 1.25rem);
+  --space-sm:  clamp(1.25rem, 1rem + 1.25vw,   2rem);
+  --space-md:  clamp(2rem,    1.5rem + 2.5vw,  4rem);
+  --space-lg:  clamp(4rem,    3rem + 5vw,      8rem);
+  --space-xl:  clamp(5rem,    4rem + 5vw,      10rem);
+
+  /* === LAYOUT === */
+  --container-width:   1400px;
+  --gutter-desktop:    64px;
+  --gutter-tablet:     40px;
+  --gutter-mobile:     20px;
+  --header-height:     clamp(64px, 6vw, 88px);
+
+  /* === TRANSITIONS === */
+  --ease-out:        cubic-bezier(0.16, 1, 0.3, 1);
+  --t-fast:          200ms ease;
+  --t-med:           350ms cubic-bezier(0.16, 1, 0.3, 1);
+}

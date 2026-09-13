@@ -1,0 +1,410 @@
+/* ── Base ── */
+.pageWrapper {
+  background-color: #F8F7F4;
+  min-height: 100vh;
+  padding-top: var(--header-height, 100px);
+  color: #106031;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Hero ── */
+.heroSection {
+  padding: clamp(4rem, 8vw, 8rem) clamp(2rem, 5vw, 6rem) 0;
+  border-bottom: 1px solid rgba(16, 96, 49, 0.12);
+  overflow: hidden;
+}
+
+.heroEyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 2rem;
+}
+
+.heroEyebrowDot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #106031;
+}
+
+.heroBigText {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.heroLine {
+  overflow: hidden;
+  line-height: 0.92;
+}
+
+.heroLine span {
+  display: block;
+  font-family: 'Aeonik', sans-serif;
+  font-size: clamp(6rem, 18vw, 18rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: #106031;
+}
+
+.heroLineOutline span {
+  color: transparent;
+  -webkit-text-stroke: 2px #106031;
+}
+
+.heroMeta {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 2.5rem 0;
+  margin-top: 2rem;
+}
+
+.heroMetaItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.heroMetaLabel {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  opacity: 0.5;
+  text-transform: uppercase;
+}
+
+.heroMetaValue {
+  font-family: 'Aeonik', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #106031;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+a.heroMetaValue:hover { opacity: 0.6; }
+
+.heroMetaDivider {
+  width: 1px;
+  height: 40px;
+  background: rgba(16, 96, 49, 0.2);
+}
+
+/* ── Form Section ── */
+.formSection {
+  flex: 1;
+  padding: clamp(5rem, 10vw, 9rem) clamp(2rem, 5vw, 6rem);
+}
+
+.formContainer {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 6rem;
+}
+
+/* Rail */
+.formRail {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.railNumber {
+  font-family: 'Aeonik', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  opacity: 0.5;
+}
+
+.railLine {
+  width: 40px;
+  height: 1px;
+  background: rgba(16, 96, 49, 0.3);
+}
+
+.railText {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 240px;
+  opacity: 0.7;
+}
+
+.contactLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.contactLinkRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  text-decoration: none;
+  color: #106031;
+  transition: opacity 0.3s ease;
+}
+
+.contactLinkRow:hover { opacity: 0.6; }
+
+.contactLinkLabel {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  opacity: 0.45;
+  text-transform: uppercase;
+}
+
+.contactLinkValue {
+  font-family: 'Aeonik', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+}
+
+/* Form Body */
+.formBody {
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.fieldsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem 4rem;
+}
+
+/* Field Wrap with floating labels */
+.fieldWrap {
+  position: relative;
+  padding-top: 1.5rem;
+}
+
+.messageWrap {
+  grid-column: 1 / -1;
+}
+
+.fieldLabel {
+  position: absolute;
+  top: 1.5rem;
+  left: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #106031;
+  opacity: 0.4;
+  pointer-events: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: left center;
+}
+
+.optional {
+  font-size: 0.8rem;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.fieldWrap.fieldFocused .fieldLabel,
+.fieldWrap.fieldFilled .fieldLabel {
+  top: 0;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+
+.fieldInput,
+.fieldTextarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(16, 96, 49, 0.2);
+  padding: 0.6rem 0;
+  font-family: 'Aeonik', sans-serif;
+  font-size: 1.2rem;
+  color: #106031;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.fieldTextarea {
+  resize: none;
+  min-height: 120px;
+}
+
+.fieldBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1.5px;
+  background: #106031;
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fieldWrap.fieldFocused .fieldBar {
+  width: 100%;
+}
+
+/* Submit */
+.submitRow {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.submitBtn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #106031;
+  color: #F8F7F4;
+  border: none;
+  padding: 1.1rem 2.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 2px;
+}
+
+.submitBtn:hover {
+  background: #0b4523;
+  gap: 1.5rem;
+}
+
+.submitArrow {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.submitBtn:hover .submitArrow {
+  transform: translateX(4px);
+}
+
+.successBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.successDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #106031;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.5); }
+}
+
+/* ── Footer Bar ── */
+.pageFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem clamp(2rem, 5vw, 6rem);
+  border-top: 1px solid rgba(16, 96, 49, 0.12);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.4;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .formContainer {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .formRail {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem 3rem;
+  }
+
+  .railLine {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 3rem 1.5rem 0;
+  }
+
+  .heroLine span {
+    font-size: clamp(4rem, 20vw, 7rem);
+  }
+
+  .heroMeta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .heroMetaDivider {
+    display: none;
+  }
+
+  .formSection {
+    padding: 3rem 1.5rem;
+  }
+
+  .fieldsGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .pageFooter {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    padding: 1.5rem;
+  }
+}
+
+/* ── Animations ── */
+.animateOnScroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.animateIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay1 { transition-delay: 0.12s; }
+.delay2 { transition-delay: 0.24s; }
+.delay3 { transition-delay: 0.36s; }

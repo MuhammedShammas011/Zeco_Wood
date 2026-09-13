@@ -1,0 +1,36 @@
+/* ==========================================================================
+   ZECOWOOD — RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+/* Tablet — 768px to 1199px */
+@media (max-width: 1199px) {
+  .container {
+    padding-inline: var(--gutter-tablet);
+  }
+
+  .section {
+    padding-block: var(--space-lg);
+  }
+}
+
+/* Mobile — below 768px */
+@media (max-width: 767px) {
+  .container {
+    padding-inline: var(--gutter-mobile);
+  }
+
+  .section {
+    padding-block: var(--space-md);
+  }
+
+  p {
+    max-width: 100%;
+  }
+}
+
+/* Small Mobile — below 480px */
+@media (max-width: 479px) {
+  .container {
+    padding-inline: 16px;
+  }
+}
