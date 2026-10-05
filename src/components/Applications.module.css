@@ -157,32 +157,43 @@
   transform: translateY(0);
 }
 
-.delay1 { transition-delay: 0.1s; }
-.delay2 { transition-delay: 0.2s; }
-.delay3 { transition-delay: 0.3s; }
-.delay4 { transition-delay: 0.4s; }
+.delay1 {
+  transition-delay: 0.1s;
+}
+
+.delay2 {
+  transition-delay: 0.2s;
+}
+
+.delay3 {
+  transition-delay: 0.3s;
+}
+
+.delay4 {
+  transition-delay: 0.4s;
+}
 
 /* Mobile Responsiveness */
 @media (max-width: 900px) {
   .bentoContainer {
     grid-template-columns: 1fr;
   }
-  
+
   .introBlock,
   .cardWide,
   .cardTall {
     grid-column: span 1;
   }
-  
+
   .cardWide {
     flex-direction: column;
     min-height: 450px;
   }
-  
+
   .cardWide .cardContent {
     width: 100%;
   }
-  
+
   .cardImageRight {
     position: relative;
     right: 0;
