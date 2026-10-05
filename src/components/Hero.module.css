@@ -277,7 +277,9 @@
     margin-left: 0;
     width: 100%;
     justify-content: flex-start;
+    align-items: flex-start;
     flex-wrap: wrap;
+    gap: 1.5rem;
   }
 }
 
@@ -300,7 +302,7 @@
   .headlineLeft,
   .headlineRight,
   .headlineBottom {
-    font-size: clamp(2rem, 10vw, 3rem);
+    font-size: clamp(1.5rem, 8vw, 2.5rem);
     transform: scaleY(1.14);
   }
 
