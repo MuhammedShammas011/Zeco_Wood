@@ -231,6 +231,11 @@
     clip-path: polygon(0 0, 140px 0, 180px 40px, 100% 40px, 100% 100%, 0 100%);
   }
 
+  .topTab {
+    left: 20px !important;
+    top: 10px;
+  }
+
   .splitLayout {
     grid-template-columns: 1fr;
   }

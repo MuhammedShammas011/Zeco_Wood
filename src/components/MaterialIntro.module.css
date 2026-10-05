@@ -230,6 +230,8 @@
   .cardLeft {
     grid-column: 1 / 13;
     grid-row: auto;
+    margin-top: 0;
+    min-height: auto;
   }
 
   .cardTopRight {
@@ -241,6 +243,7 @@
     grid-column: 1 / 13;
     grid-row: auto;
     grid-template-columns: 1fr;
+    margin-top: 0;
   }
 
   .tallImageContainer {
