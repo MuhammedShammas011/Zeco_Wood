@@ -31,10 +31,16 @@ export default function Hero() {
   const translateY = scrollY * 0.3;
 
   // Helper function to render text as individual letters for the dock bulge effect
+  // Groups letters into words so they can gracefully wrap on smaller screens
   const renderBulgeText = (text) => {
-    return text.split('').map((char, index) => (
-      <span key={index} className={styles.bulgeLetter}>
-        {char === ' ' ? '\u00A0' : char}
+    return text.split(' ').map((word, wordIndex, words) => (
+      <span key={wordIndex} className={styles.wordWrapper}>
+        {word.split('').map((char, index) => (
+          <span key={index} className={styles.bulgeLetter}>
+            {char}
+          </span>
+        ))}
+        {wordIndex < words.length - 1 && <span className={styles.spaceLetter}>&nbsp;</span>}
       </span>
     ));
   };

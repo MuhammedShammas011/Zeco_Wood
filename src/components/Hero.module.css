@@ -292,12 +292,16 @@
 }
 
 @media (max-width: 600px) {
+  .hero {
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+  }
 
   .headlineLeft,
   .headlineRight,
   .headlineBottom {
-    font-size: clamp(2.2rem, 11vw, 3.4rem);
-    transform: none;
+    font-size: clamp(2rem, 10vw, 3rem);
+    transform: scaleY(1.14);
   }
 
   .descLeft {
@@ -333,10 +337,21 @@
 }
 
 .revealText {
-  display: inline-block;
+  display: inline-flex;
+  flex-wrap: wrap;
   transform: translateY(120%);
   opacity: 0;
   animation: revealUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.wordWrapper {
+  display: inline-flex;
+  white-space: nowrap;
+}
+
+.spaceLetter {
+  display: inline-block;
+  width: 0.25em; /* approximate space width */
 }
 
 @keyframes revealUp {
